@@ -1,0 +1,26 @@
+body{
+    padding-top: 100px;
+}
+
+.col-7{
+    background-image: linear-gradient(to bottom right, rgb(92, 140, 228), rgb(125, 71, 175));
+    border-radius: 15px;
+}
+
+.minumspace{
+    padding-bottom: 12px;
+}
+
+a:link, a:visited {
+    background-color: #8f36f448;
+    color: white;
+    padding: 11px 2px;
+    border: 12px 23px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  a:hover, a:active {
+    background-color: rgb(98, 0, 255);
+  }
