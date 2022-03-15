@@ -17,62 +17,120 @@
         <div class="row">
           <div class="col"></div>
           <div class="col-7">
-            <div class="row">
+            <div class="row mb-3">
               <label><center><h1>Registro de Usuarios</h1></center></label>
             </div>
-            <form>
+            <form id="formulario" class="row g-3 ">
               <div class="row">
-                <div class="input-group mb-3">
+                <div class="input-group mb-3" id="inp-idusuario">
                   <span class="input-group-text" id="basic-addon1" style="background-color: rgba(169, 169, 255, 0.397); color: white;">ID Usuario</span>
-                  <input type="text" class="form-control" placeholder="# ID" aria-label="ID Usuario" aria-describedby="basic-addon1">
+                  <input type="text" class="form-control" placeholder="# ID" aria-label="ID Usuario" aria-describedby="basic-addon1" name="idusuario" id="idusuario">
+                  <div class="invalid-feedback">Entre 7 y 14 digitos</div>
+                </div>
+        
+                <div class="input-group mb-3" id="inp-nombre">
+                  <div class="col">
+                    <span class="input-group-text" id="basic-addon1" style="background-color: rgba(169, 169, 255, 0.397); color: white;">Nombres</span>
+                    <input type="text" class="form-control" placeholder="Nombre Pila" aria-label="Nombres" aria-describedby="basic-addon1" name="nombre" id="nombre">
+                    <div class="invalid-feedback" id="temp1">Máximo 25 letras, sin caracteres extraños</div>
+                  </div>
+                  <div class="col">
+                    <span class="input-group-text" id="basic-addon1" style="background-color: rgba(169, 169, 255, 0.397); color: white;">Apellidos</span>
+                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" name="apellido" id="apellido">
+                    <div class="invalid-feedback">Máximo 25 letras, sin caracteres extraños</div>
+                  </div>
                 </div>
         
                 <div class="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon1" style="background-color: rgba(169, 169, 255, 0.397); color: white;">Nombres</span>
-                  <input type="text" class="form-control" placeholder="Nombre Pila" aria-label="Nombres" aria-describedby="basic-addon1">
-                  <span class="input-group-text" id="basic-addon1" style="background-color: rgba(169, 169, 255, 0.397); color: white;">Apellidos</span>
-                  <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
-                </div>
-        
-                <div class="input-group mb-3">
-                  <label class="input-group-text" for="inputGroupSelect01" style="background-color: rgba(169, 169, 255, 0.397); color: white;">País</label>
-                  <select class="form-select" id="inputGroupSelect01">
-                    <option selected>Elige una opción</option>
+                  <label class="input-group-text" for="pais" style="background-color: rgba(169, 169, 255, 0.397); color: white;">País</label>
+                  <select class="form-select" name="pais" id="pais" required>
+                    <option selected disabled value="">Elige una opción</option>
                     <option value="1">Colombia</option>
                     <option value="2">EEUU</option>
                     <option value="3">Rusia</option>
                   </select>
+                  <div class="invalid-feedback">Por favor seleccione una opción</div>
                 </div>
         
-                <div class="input-group mb-3">
+                <div class="input-group mb-3" id="inp-direccion">
                   <span class="input-group-text" id="basic-addon1" style="background-color: rgba(169, 169, 255, 0.397); color: white;">Dirección</span>
-                  <input type="text" class="form-control" aria-label="Direccion" aria-describedby="basic-addon1">
+                  <input type="text" class="form-control" aria-label="Direccion" aria-describedby="basic-addon1" name="direccion" id="direccion">
+                  <div class="invalid-feedback">La dirección debe iniciar con cll/cra/av/anv/trans</div>
                 </div>
         
-                <div class="input-group mb-3">
+                <div class="input-group mb-3" id="inp-username">
                   <span class="input-group-text" id="basic-addon1" style="background-color: rgba(169, 169, 255, 0.397); color: white;">Username</span>
-                  <input type="text" class="form-control" placeholder="@Username" aria-label="Username" aria-describedby="basic-addon1">
+                  <input type="text" class="form-control" placeholder="@Username" aria-label="Username" aria-describedby="basic-addon1" name="username" id="username">
+                  <div class="invalid-feedback">Entre 10 a 20 caracteres</div>
                 </div>
         
-                <div class="input-group mb-3">
+                <div class="input-group mb-3" id="inp-contraseña">
                   <span class="input-group-text" id="basic-addon1" style="background-color: rgba(169, 169, 255, 0.397); color: white;">Contraseña</span>
-                  <input type="password" class="form-control" aria-label="Contraseña" aria-describedby="basic-addon1">
+                  <input type="password" class="form-control" aria-label="Contraseña" aria-describedby="basic-addon1" name="contraseña" id="contraseña">
+                  <div class="invalid-feedback">Entre 15 y 20 caracteres</div>
                 </div>
         
-                <div class="input-group mb-3">
+                <div class="input-group mb-3" id="inp-email">
                   <span class="input-group-text" id="basic-addon1" style="background-color: rgba(169, 169, 255, 0.397); color: white;">Email</span>
-                  <input type="text" placeholder="Example@email.com" class="form-control" aria-label="Direccion" aria-describedby="basic-addon1">
+                  <input type="text" placeholder="Example@email.com" class="form-control" aria-label="Direccion" aria-describedby="basic-addon1" name="email" id="email">
+                  <div class="invalid-feedback">Email no válido</div>
                 </div>
         
-                <div class="input-group mb-3">
+                <div class="input-group mb-3" id="inp-telefono">
                   <span class="input-group-text" id="basic-addon1" style="background-color: rgba(169, 169, 255, 0.397); color: white;">Teléfono</span>
-                  <input type="text" class="form-control" aria-label="Direccion" aria-describedby="basic-addon1">
+                  <input type="text" class="form-control" aria-label="Direccion" aria-describedby="basic-addon1" name="telefono" id="telefono">
+                  <div class="invalid-feedback">Entre 7 a 14 digitos</div>
+                </div>
+
+                <div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" value="option1">
+                    <label class="form-check-label" for="flexRadioDefault1" >
+                      Deseo registrar gustos de autos
+                  </div>
+                  <div class="form-check"> 
+                    <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault2" value="option2">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      No deseo registrar gustos de autos
+                    </label>
+                  </div>
+                  <div class="input-group mb-3 visually-hidden" id="inp-color">
+                    <span class="input-group-text" id="basic-addon1" style="background-color: rgba(169, 169, 255, 0.397); color: white;">Color de carro favorito</span>
+                    <input type="text" class="form-control" aria-label="Direccion" aria-describedby="basic-addon1" name="ColorC" id="ColorC">
+                  </div>
+                  <div class="input-group mb-3 visually-hidden" id="inp-marca">
+                    <span class="input-group-text" id="basic-addon1" style="background-color: rgba(169, 169, 255, 0.397); color: white;">Marca de carro favorito</span>
+                    <input type="text" class="form-control" aria-label="Direccion" aria-describedby="basic-addon1" name="MarcaC" id="MarcaC">
+                  </div>
+                  <div class="input-group mb-3 visually-hidden" id="inp-estilo">
+                    <span class="input-group-text" id="basic-addon1" style="background-color: rgba(169, 169, 255, 0.397); color: white;">Estilo de carro favorito</span>
+                    <input type="text" class="form-control" aria-label="Direccion" aria-describedby="basic-addon1" name="EstiloC" id="EstiloC">
+                  </div>
+                  <div class="input-group mb-3 visually-hidden" id="inp-modelo">
+                    <span class="input-group-text" id="basic-addon1" style="background-color: rgba(169, 169, 255, 0.397); color: white;">Modelo de carro favorito</span>
+                    <input type="text" class="form-control" aria-label="Direccion" aria-describedby="basic-addon1" name="ModeloC" id="ModeloC">
+                  </div>
+                  <div class="input-group mb-3 visually-hidden" id="inp-range"> 
+                    <label for="customRange2" class="form-label">¿Aproximadamente cuánto estarías dispuesto a pagar por un vehículo? $300-1000 USD</label>
+                    <input type="range" class="range" min="300" max="1000" step="50" id="customRange2" name="RangeC" id="RangeC" list="tickmarks">
+                    <!--El tipo range de Bootstrap no permite mostrar esto-->
+                    <datalist id="tickmarks"> 
+                      <option value="300" label="300">
+                      <option value="400">
+                      <option value="500">
+                      <option value="600" label="600">
+                      <option value="700">
+                      <option value="800">
+                      <option value="900">
+                      <option value="1000" label="1000">
+                    </datalist>
+                  </div>
                 </div>
         
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                   <a href="index.html">Back</a>
                   <button class="btn btn-dark btn-lg" type="reset">Borrar</button>
-                  <button class="btn btn-light btn-lg" onclick="alert('En proceso')" type="submit">Enviar</button>
+                  <button class="btn btn-light btn-lg" type="submit">Enviar</button>
                 </div>
                 <div class="minumspace"> </div>
               </div>
@@ -83,5 +141,6 @@
         
       </div>
     </div>
+    <script src="..\Taller 4\formulariouser.js"></script>
   </body>
 </html>
