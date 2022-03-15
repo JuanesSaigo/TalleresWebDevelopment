@@ -2,27 +2,28 @@ const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
 
 const expresiones = {
-	usuario: /^[a-zA-Z0-9\_\-]{10,20}$/, // Letras, numeros, guion y guion_bajo
-	nombre: /^[a-zA-ZÀ-ÿ\s]{1,25}$/, // Letras y espacios, pueden llevar acentos.
-	password: /^.{15,20}$/, // 15 a 20.
-	email: /^[a-zA-Z0-9_.+-]{1,80}@[a-zA-Z0-9-]{2,25}\.[a-zA-Z0-9-.]{2,15}$/,
+	usuario: /^[a-zA-Z0-9\_\-]{5,20}$/, // Letras, numeros, guion y guion_bajo
+	nombre: /^[a-zA-ZÀ-ÿ\s]{3,25}$/, // Letras y espacios, pueden llevar acentos.
+	password: /^.{8,20}$/, // 15 a 20.
+	email: /^[a-zA-Z0-9_.+-]{1,80}@[a-zA-Z0-9-]{3,25}\.[a-zA-Z0-9-.]{2,15}$/,
 	digito: /^\d{7,14}$/, // 7 a 14 numeros.
-    direccion: /^(cll|cra|av|anv|trans)[\s-].{6,120}$/
+    fnac: /^\d\d\/\d\d\/\d\d\d\d$/
 }
+function calcularEdad(fecha) {
+    var hoy = new Date();
+    var cumpleanos = new Date(fecha);
+    var edad = hoy.getFullYear() - cumpleanos.getFullYear();
+    var m = hoy.getMonth() - cumpleanos.getMonth();
 
+    if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
+        edad--;
+    }
+
+    return edad;
+}
 
 const validarFormulario = (e) => {
     switch (e.target.name) {
-        case "idusuario":
-            if(expresiones.digito.test(e.target.value)){
-                e.target.classList.remove('is-invalid');
-                e.target.classList.add('is-valid');
-            }
-            else{
-                e.target.classList.remove('is-valid');
-                e.target.classList.add('is-invalid');
-            }  
-        break;
         case "nombre":
             if(expresiones.nombre.test(e.target.value)){
                 e.target.classList.remove('is-invalid');
@@ -43,10 +44,11 @@ const validarFormulario = (e) => {
                 e.target.classList.add('is-invalid');
             }  
         break;
-        case "direccion":
-            if(expresiones.direccion.test(e.target.value)){
+        case "fnac":
+            if(expresiones.fnac.test(e.target.value)){
                 e.target.classList.remove('is-invalid');
                 e.target.classList.add('is-valid');
+                document.getElementById('edadn').value = calcularEdad(e.target.value) ;
             }
             else{
                 e.target.classList.remove('is-valid');
@@ -93,31 +95,28 @@ const validarFormulario = (e) => {
                 e.target.classList.add('is-invalid');
             }  
         break;
-        case "telefono":
-            if(expresiones.digito.test(e.target.value)){
-                e.target.classList.remove('is-invalid');
-                e.target.classList.add('is-valid');
-            }
-            else{
-                e.target.classList.remove('is-valid');
-                e.target.classList.add('is-invalid');
-            }  
-        break;
         case "flexRadioDefault1":
-            document.getElementById('inp-color').classList.remove('visually-hidden');
-            document.getElementById('inp-marca').classList.remove('visually-hidden');
-            document.getElementById('inp-estilo').classList.remove('visually-hidden');
-            document.getElementById('inp-modelo').classList.remove('visually-hidden');
-            document.getElementById('inp-range').classList.remove('visually-hidden');
+            document.getElementById('inp-enf1').classList.remove('visually-hidden');
+            document.getElementById('inp-enf2').classList.remove('visually-hidden');
+            document.getElementById('inp-enf3').classList.remove('visually-hidden');
+            document.getElementById('inp-enf4').classList.remove('visually-hidden');
+            document.getElementById('inp-enf5').classList.remove('visually-hidden');
             document.getElementById("flexRadioDefault2").checked = false;
+            document.getElementById('inp-enf1').checked = false;
         break;
         case "flexRadioDefault2":
-            document.getElementById('inp-color').classList.add('visually-hidden');
-            document.getElementById('inp-marca').classList.add('visually-hidden');
-            document.getElementById('inp-estilo').classList.add('visually-hidden');
-            document.getElementById('inp-modelo').classList.add('visually-hidden');
-            document.getElementById('inp-range').classList.add('visually-hidden');
+            document.getElementById('flexCheckDefault1').checked = false;
+            document.getElementById('flexCheckDefault2').checked = false;
+            document.getElementById('flexCheckDefault3').checked = false;
+            document.getElementById('flexCheckDefault4').checked = false;
+            document.getElementById('exampleFormControlTextarea1').value="";
+            document.getElementById('inp-enf1').classList.add('visually-hidden');
+            document.getElementById('inp-enf2').classList.add('visually-hidden');
+            document.getElementById('inp-enf3').classList.add('visually-hidden');
+            document.getElementById('inp-enf4').classList.add('visually-hidden');
+            document.getElementById('inp-enf5').classList.add('visually-hidden');
             document.getElementById("flexRadioDefault1").checked = false;
+            
         break;
     }
 }

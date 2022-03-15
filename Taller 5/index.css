@@ -1,9 +1,15 @@
 body{
     background-image: url("https://demiedo.es/imagenes/2013/05/fondo-claro-oscuro-1024x640.jpg");
 }
+.minumspace{
+    padding-bottom: 12px;
+}
 
 .container{
-    margin: 100px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
     background-color: rgba(255, 255, 255, 0.644);
 }
 h1{
@@ -11,4 +17,30 @@ h1{
 }
 div{
     text-align: center;
+}
+
+table{
+    background-image: linear-gradient(to bottom right, rgb(182, 162, 230), rgb(82, 82, 82));
+    margin: auto;
+    padding: auto;
+}
+
+table , td, th {
+	border: 1px solid #595959;
+	border-collapse: collapse;
+    
+}
+td, th {
+	padding: 3px;
+	width: 30px;
+	height: 25px;
+}
+th {
+	background: #f0e6cc;
+}
+.even {
+	background: #fbf8f0;
+}
+.odd {
+	background: #fefcf9;
 }

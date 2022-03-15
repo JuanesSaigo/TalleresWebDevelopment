@@ -4,22 +4,92 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="index.css">
+    
     <title>Index</title>
   </head>
 
   <body>
       <div class="container">
         <h1>Index Taller 5</h1>
+        <div class="minumspace"> </div>
         <div>
             <a href="usert5.html">Registro de Usuarios</a>
         </div>
-        <div>
-            <a href="carbootstrap.html">Grilla en Jquery</a>
-        </div>
+        <div class="minumspace"> </div>
         <div>
             <a href="../integrantes.html">Integrantes</a>
         </div>
+        <div class="minumspace"> </div>
+        <div>
+          <button type="button" id="grilla1">Grilla en Jquery</button>
+        </div>
+        <div class="minumspace"> </div>
+        <div>
+          <table>
+            <tbody  id="containTable">
+              <tr>
+                <td rowspan="3">ID</td>
+                <td rowspan="3">Name</td>
+                <td rowspan="3">Username</td>
+                <td rowspan="3">Email</td>
+                <td colspan="6">Address</td>
+                <td rowspan="3">Phone</td>
+                <td rowspan="3">Webside</td>
+                <td colspan="3">Company</td>
+              </tr>
+              <tr>
+                <td rowspan="2">Street</td>
+                <td rowspan="2">Suite</td>
+                <td rowspan="2">City</td>
+                <td rowspan="2">Zipcode</td>
+                <td colspan="2">Geo</td>
+                <td rowspan="2">Name</td>
+                <td rowspan="2">CatchPhrase</td>
+                <td rowspan="2">BS</td>
+              </tr>
+              <tr>
+                <td>lat</td>
+                <td>lng</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="minumspace"> </div>
+
+        <script>
+          var requestURL = "https://jsonplaceholder.typicode.com/users"
+          $('#grilla1').on('click', function() {
+            $.ajax({
+              url: requestURL,
+              success: function(data) {
+                $tabla = $('#containTable');
+
+                for (var i = 0; i < data.length; i++) {
+                  var $tr = $('<tr></tr>');
+                  $tr.append('<td>' + data[i].id + '</td>');
+                  $tr.append('<td>' + data[i].name + '</td>');
+                  $tr.append('<td>' + data[i].username + '</td>');
+                  $tr.append('<td>' + data[i].email + '</td>');
+                  $tr.append('<td>' + data[i].address.street + '</td>');
+                  $tr.append('<td>' + data[i].address.suite + '</td>');
+                  $tr.append('<td>' + data[i].address.city + '</td>');
+                  $tr.append('<td>' + data[i].address.zipcode + '</td>');
+                  $tr.append('<td>' + data[i].address.geo.lat + '</td>');
+                  $tr.append('<td>' + data[i].address.geo.lng + '</td>');
+                  $tr.append('<td>' + data[i].phone + '</td>');
+                  $tr.append('<td>' + data[i].website + '</td>');
+                  $tr.append('<td>' + data[i].company.name + '</td>');
+                  $tr.append('<td>' + data[i].company.catchPhrase + '</td>');
+                  $tr.append('<td>' + data[i].company.bs + '</td>');
+
+                  $tabla.append($tr);
+                }
+              }
+            });
+          });
+        </script>
       </div>
   </body>
 
