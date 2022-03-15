@@ -73,6 +73,16 @@ const validarFormulario = (e) => {
                 e.target.classList.add('is-invalid');
             }  
         break;
+        case "concontraseña":
+            if(e.target.value == document.getElementById('contraseña').value){
+                e.target.classList.remove('is-invalid');
+                e.target.classList.add('is-valid');
+            }
+            else{
+                e.target.classList.remove('is-valid');
+                e.target.classList.add('is-invalid');
+            }  
+        break;
         case "email":
             if(expresiones.email.test(e.target.value)){
                 e.target.classList.remove('is-invalid');
