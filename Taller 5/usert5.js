@@ -103,6 +103,9 @@ const validarFormulario = (e) => {
             document.getElementById('inp-enf5').classList.remove('visually-hidden');
             document.getElementById("flexRadioDefault2").checked = false;
             document.getElementById('inp-enf1').checked = false;
+
+            document.getElementById('t-enf0').value = "He sufrido enfermedades importantes: ";
+
         break;
         case "flexRadioDefault2":
             document.getElementById('flexCheckDefault1').checked = false;
@@ -116,7 +119,46 @@ const validarFormulario = (e) => {
             document.getElementById('inp-enf4').classList.add('visually-hidden');
             document.getElementById('inp-enf5').classList.add('visually-hidden');
             document.getElementById("flexRadioDefault1").checked = false;
-            
+            document.getElementById('t-enf0').value = "No he sufrido enfermedades importantes";
+        break;
+        case "flexCheckDefault1":
+            if(e.target.checked==true){
+                document.getElementById('t-enf0').value += "Cancer, ";
+            }
+            else{
+                //document.getElementById('t-enf0').value -= "Cancer, ";
+            }
+        break;
+        case "flexCheckDefault2":
+            if(e.target.checked==true){
+                document.getElementById('t-enf0').value += "Diabetes, hiperglucemia o hipoglucemia, ";
+            }
+            else{
+                //document.getElementById('t-enf0').value -= "Diabetes, hiperglucemia o hipoglucemia, ";
+            }
+        break;
+        case "flexCheckDefault3":
+            if(e.target.checked==true){
+                document.getElementById('t-enf0').value += "Enfermedades cardiovasculares, ";
+            }
+            else{
+                //document.getElementById('t-enf0').value -= "Enfermedades cardiovasculares, ";
+            }
+        break;
+        case "flexCheckDefault4":
+            if(e.target.checked==true){
+                document.getElementById('t-enf0').value += "Enfermedades infecciosas: ";
+            }
+            else{
+                //document.getElementById('t-enf0').value -= "Enfermedades infecciosas: ";
+                //document.getElementById('t-enf0').value -= document.getElementById('exampleFormControlTextarea1').value;
+                document.getElementById('exampleFormControlTextarea1').value = "";
+            }
+        break;
+        case "exampleFormControlTextarea1":
+            if(e.target.value != ""){
+                //document.getElementById('t-enf0').value += document.getElementById('exampleFormControlTextarea1').value;
+            }
         break;
     }
 }
