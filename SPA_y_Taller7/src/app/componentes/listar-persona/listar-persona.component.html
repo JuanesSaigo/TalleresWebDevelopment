@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header">
-        Tabla Usuarios
+        Tabla Personas
     </div>
     <div class="row p-4 ">
         <table class="table align-middle">
@@ -21,19 +21,19 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td scope="row">1</td>
-                    <td>nombreP</td>
-                    <td>apellidoP</td>
-                    <td>nombreTD</td>
-                    <td>documentoP</td>
-                    <td>lugarnacP</td>
-                    <td>fechanacP</td>
-                    <td>emailP</td>
-                    <td>telefonoP</td>
-                    <td>usuarioP</td>
-                    <td>nombreC</td>
-                    <td> <a routerLink="/editar-persona/1">Editar</a> |   Borrar</td>
+                <tr **ngFor="let persona of Personas;let iControl=index">
+                    <td scope="row">{{persona.ID}}</td>
+                    <td>{{persona.Nombre}}</td>
+                    <td>{{persona.Apellidos}}</td>
+                    <td>{{persona.TDoc}}</td>
+                    <td>{{persona.Documento}}</td>
+                    <td>{{persona.LNacimiento}}</td>
+                    <td>{{persona.FechaNacimiento}}</td>
+                    <td>{{persona.Email}}</td>
+                    <td>{{persona.Telefono}}</td>
+                    <td>{{persona.Usuario}}</td>
+                    <td>{{persona.LResidencia}}</td>
+                    <td> <a routerLink="/editar-persona/{{persona.ID}}">Editar</a> |   <a role="button" class="btn btn-danger" (click)="borrarRegistro(persona.ID,iControl)">Borrar</a></td>
                 </tr>
             </tbody>
         </table>

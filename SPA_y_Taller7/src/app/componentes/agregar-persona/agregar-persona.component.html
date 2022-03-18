@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header">
-        Registro TipoDocumento
+        Agregar Persona
     </div>
 
     <div class="row -sm">
@@ -11,50 +11,50 @@
             </div>
             <div class="mb-3">
                 <label for="ntd">Apellidos</label>
-                <input class="form-control" type="text" formControlName="email" name="inp-apellido-p" id="inp-apellido-p" aria-describedby="basic-addon1">
+                <input class="form-control" type="text" formControlName="apellido" name="inp-apellido-p" id="inp-apellido-p" aria-describedby="basic-addon1">
             </div>
             <div class="mb-3">
                 <label class="center" for="ntd">Tipo de documento:</label>
-                <select class="form-select" aria-label="Default select example" name="select-1" id="select-1">
+                <select class="form-select" aria-label="Default select example" formControlName="tipodoc" name="select-1" id="select-1">
                     <option selected>Seleccione el tipo</option>
                     <option value='1'>a</option>
                 </select>
             </div>
             <div class="mb-3">
                 <label for="ntd">Documento</label>
-                <input class="form-control" type="text" name="inp-doc-p" id="inp-doc-p" aria-describedby="basic-addon1">
+                <input class="form-control" type="text" formControlName="doc" name="inp-doc-p" id="inp-doc-p" aria-describedby="basic-addon1">
             </div>
             <div class="mb-3">
                 <label class="center" for="ntd">Lugar de Nacimiento</label>
-                <input class="form-control" type="text" name="inp-lnac-p" id="inp-lnac-p" aria-describedby="basic-addon1">
+                <input class="form-control" type="text" formControlName="lnac" name="inp-lnac-p" id="inp-lnac-p" aria-describedby="basic-addon1">
             </div>
             <div class="mb-3">
                 <label class="center" for="ntd">Fecha de Nacimiento</label>
-                <input class="form-control" type="text" name="inp-fnac-p" id="inp-fnac-p" placeholder="DD/MM/YYYY" aria-describedby="basic-addon1">
+                <input class="form-control" type="text" formControlName="fnac" name="inp-fnac-p" id="inp-fnac-p" placeholder="DD/MM/YYYY" aria-describedby="basic-addon1">
             </div>
             <div class="mb-3">
                 <label class="center" for="ntd">Email</label>
-                <input class="form-control" type="text" name="inp-email-p" id="inp-email-p" placeholder="Example@correo.com" aria-describedby="basic-addon1">
+                <input class="form-control" type="text" formControlName="email" name="inp-email-p" id="inp-email-p" placeholder="Example@correo.com" aria-describedby="basic-addon1">
             </div>
             <div class="mb-3">
                 <label class="center" for="ntd">Telefono</label>
-                <input class="form-control" type="text" name="inp-telefono-p" id="inp-telefono-p" aria-describedby="basic-addon1">
+                <input class="form-control" type="text" formControlName="tell" name="inp-telefono-p" id="inp-telefono-p" aria-describedby="basic-addon1">
             </div>
             <div class="mb-3">
                 <label class="center" for="ntd">Nombre de Usuario</label>
-                <input class="form-control" type="text" name="inp-user-p" id="inp-user-p" aria-describedby="basic-addon1">
+                <input class="form-control" type="text" formControlName="user" name="inp-user-p" id="inp-user-p" aria-describedby="basic-addon1">
             </div>
             <div class="mb-3">
                 <label class="center" for="ntd">Contraseña</label>
-                <input class="form-control" type="password" name="inp-pass-p" id="inp-pass-p" aria-describedby="basic-addon1">
+                <input class="form-control" type="password" formControlName="passw" name="inp-pass-p" id="inp-pass-p" aria-describedby="basic-addon1">
             </div>
             <div class="mb-3">
                 <label class="center" for="ntd">Confirmar Contraseña</label>
-                <input class="form-control" type="password" name="inp-pass2-p" id="inp-pass2-p" aria-describedby="basic-addon1">
+                <input class="form-control" type="password" name="inp-pass2-p" formControlName="passw2" id="inp-pass2-p" aria-describedby="basic-addon1">
             </div>
             <div class="mb-3">
                 <label class="center" for="ntd">Lugar de Residencia:</label>
-                <select class="form-select" aria-label="Default select example" name="select-2" id="select-2">
+                <select class="form-select" aria-label="Default select example" formControlName="lres" name="select-2" id="select-2">
                     <option selected>Seleccione el tipo</option>
                     <option value='1'>b</option>
                 </select>
