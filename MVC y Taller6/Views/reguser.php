@@ -31,7 +31,7 @@
                         </div>
 
                         <div class="row -sm">
-                            <form action="../Controller/consultaimp.php" class="p-4" method="POST">
+                            <form action="../Controller/consultaimp.php" id="formulario" class="p-4" method="POST">
                                 <div class="mb-3">
                                     <label class="center" for="ntd">Nombres</label>
                                     <input class="form-control" type="text" name="inp-nombre-p" id="inp-nombre-p" aria-describedby="basic-addon1">
@@ -154,14 +154,14 @@
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                Elija un campo a Borrar de la BD
+                                                Elija un campo a Borrar de la BD en Persona
                                                 <select class="form-select" aria-label="Default select example" name="select-3">
                                                     <option selected>Seleccione el campo</option>
                                                     <?php
-                                                        foreach ($tdocumento2 as $valores){
+                                                        foreach ($tdocumento as $valores){
                                                 
                                                     ?>
-                                                    <option value='<?php echo $valores->idTD ?>'><?php echo $valores->nombreTD ?></option>
+                                                    <option value='<?php echo $valores->idP ?>'><?php echo $valores->nombreP ?>, <?php echo $valores->emailP ?> </option>
                                                     <?php
                                                         }
                                                     ?>
