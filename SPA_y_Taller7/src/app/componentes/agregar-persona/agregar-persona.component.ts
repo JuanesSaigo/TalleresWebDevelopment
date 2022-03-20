@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class AgregarPersonaComponent implements OnInit {
   formPersona:FormGroup;
+  Ciudades:any;
+  TDocs:any;
 
   constructor(public formulario:FormBuilder, private CrudService:CrudService, private ruteador:Router) { 
     this.formPersona=this.formulario.group({
@@ -31,9 +33,17 @@ export class AgregarPersonaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.CrudService.ObtenerCiudad().subscribe(respuesta1=>{
+      console.log(respuesta1);
+      this.Ciudades=respuesta1;
+    })
+    this.CrudService.ObtenerTipoDoc().subscribe(respuesta2=>{
+      console.log(respuesta2);
+      this.TDocs=respuesta2;
+    })
   }
   enviarDatos():any{
-    console.log("Me presionaste");
+    console.log("A ver si se agrega");
     console.log(this.formPersona.value);
     this.CrudService.AgregarPersona(this.formPersona.value).subscribe(respuesta=>{
       this.ruteador.navigateByUrl('/listar-persona')

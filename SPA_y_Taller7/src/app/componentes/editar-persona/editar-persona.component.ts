@@ -11,6 +11,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class EditarPersonaComponent implements OnInit {
   formPersona:FormGroup;
   elID:any;
+  Ciudades:any;
+  TDocs:any;
 
   constructor(private activeRoute:ActivatedRoute, private crudService:CrudService,public formulario:FormBuilder,private ruteador:Router) {
     this.elID=this.activeRoute.snapshot.paramMap.get('id');
@@ -50,6 +52,14 @@ export class EditarPersonaComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.crudService.ObtenerCiudad().subscribe(respuesta1=>{
+      console.log(respuesta1);
+      this.Ciudades=respuesta1;
+    })
+    this.crudService.ObtenerTipoDoc().subscribe(respuesta2=>{
+      console.log(respuesta2);
+      this.TDocs=respuesta2;
+    })
   }
 
   enviarDatos():any{

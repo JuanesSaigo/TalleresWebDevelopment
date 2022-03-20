@@ -15,9 +15,9 @@
             </div>
             <div class="mb-3">
                 <label class="center" for="ntd">Tipo de documento:</label>
-                <select class="form-select" aria-label="Default select example" formControlName="tipodoc" name="select-1" id="select-1">
+                <select class="form-select" aria-label="Default select example" formControlName="tipodoc" name="select-1" id="select-1" >
                     <option selected>Seleccione el tipo</option>
-                    <option value='1'>a</option>
+                    <option *ngFor="let tipodocumento of TDocs;let iControl=index" value={{tipodocumento.idTD}}>{{tipodocumento.nombreTD}}</option>
                 </select>
             </div>
             <div class="mb-3">
@@ -56,7 +56,7 @@
                 <label class="center" for="ntd">Lugar de Residencia:</label>
                 <select class="form-select" aria-label="Default select example" formControlName="lres" name="select-2" id="select-2">
                     <option selected>Seleccione el tipo</option>
-                    <option value='1'>b</option>
+                    <option *ngFor="let ciudad of Ciudades;let iControl=index" value={{ciudad.idC}}>{{ciudad.nombreC}}</option>
                 </select>
             </div>
 
