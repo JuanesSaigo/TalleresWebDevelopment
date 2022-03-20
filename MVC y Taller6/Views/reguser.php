@@ -107,9 +107,38 @@
                                         <button type="submit" class="btn btn-success" name="Bagregar">Agregar</button>
                                     </div>
                                     <div class="col-2">
-                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal2">Borrar</button>
+                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModalx">Borrar</button>
                                     </div>
                                     <div class="col-2"></div>
+
+                                    <div class="modal fade" id="exampleModalx" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabelx">Atención</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                Elija un campo a Borrar de la BD en Persona
+                                                <select class="form-select" aria-label="Default select example" name="select-3">
+                                                    <option selected>Seleccione el campo</option>
+                                                    <?php
+                                                        foreach ($tdocumento as $valoresp){
+                                                
+                                                    ?>
+                                                    <option value='<?php echo $valoresp->idP ?>'><?php echo $valoresp->nombreP ?>, <?php echo $valores->emailP ?> </option>
+                                                    <?php
+                                                        }
+                                                    ?>
+                                                </select>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                                    <button type="submit" class="btn btn-primary" name="Bborrar">Borrar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <?php
                                         if(isset($_GET['mensaje']) and $_GET['mensaje'] == 'faltaP' ){
@@ -146,34 +175,7 @@
                                     <?php
                                         }
                                     ?>
-                                    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel2">Atención</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                Elija un campo a Borrar de la BD en Persona
-                                                <select class="form-select" aria-label="Default select example" name="select-3">
-                                                    <option selected>Seleccione el campo</option>
-                                                    <?php
-                                                        foreach ($tdocumento as $valores){
-                                                
-                                                    ?>
-                                                    <option value='<?php echo $valores->idP ?>'><?php echo $valores->nombreP ?>, <?php echo $valores->emailP ?> </option>
-                                                    <?php
-                                                        }
-                                                    ?>
-                                                </select>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                                    <button type="submit" class="btn btn-primary" name="Bborrar">Borrar</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                                 </div>
                             </form>
                         </div>

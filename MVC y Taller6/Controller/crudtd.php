@@ -6,7 +6,7 @@
 
     if($_SERVER['REQUEST_METHOD']=="POST" and isset($_POST['Bagregar'])){
         if(empty($_POST["inp-nombre-td"]) || empty($_POST["inp-desc-td"])){
-            header('Location: regdoc.php?mensaje=faltaTD');
+            header('Location: ../Views/regdoc.php?mensaje=faltaTD');
             exit();
         }
         $validar = "SELECT * FROM tipodocumento WHERE nombreTD = '$nombre2'";

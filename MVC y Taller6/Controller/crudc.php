@@ -6,7 +6,7 @@
 
     if($_SERVER['REQUEST_METHOD']=="POST" and isset($_POST['Bagregar'])){
         if(empty($_POST["inp-nombre-c"]) || empty($_POST["inp-desc-c"])){
-            header('Location: regcity.php?mensaje=faltaC');
+            header('Location: ../Views/regcity.php?mensaje=faltaC');
             exit();
         }
         $validar = "SELECT * FROM ciudad WHERE nombreC = '$nombre2'";

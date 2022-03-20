@@ -17,7 +17,7 @@
 
     if($_SERVER['REQUEST_METHOD']=="POST" and isset($_POST['Bagregar'])){
         if(empty($_POST["inp-user-p"]) || empty($_POST["inp-pass-p"]) || empty($_POST["inp-email-p"]) || empty($_POST["inp-nombre-p"]) || empty($_POST["inp-doc-p"])){
-            header('Location: reguser.php?mensaje=faltaP');
+            header('Location: ../Views/reguser.php?mensaje=faltaP');
             exit();
         }
         $validar = "SELECT * FROM persona WHERE usuarioP = '$user2' & documentoP = '$doc2' & emailP = '$email2'";
