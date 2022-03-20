@@ -12,7 +12,7 @@ $conexionBD = new mysqli($servidor, $usuario, $passwordbd, $nombreBaseDatos);
 
 // Consulta datos y recepciona una clave para consultar dichos datos con dicha clave
 if (isset($_GET["consultar"])){
-    $sqlPersonax = mysqli_query($conexionBD,"SELECT * FROM empleados WHERE id=".$_GET["consultar"]);
+    $sqlPersonax = mysqli_query($conexionBD,"SELECT * FROM persona WHERE id=".$_GET["consultar"]);
     if(mysqli_num_rows($sqlPersonax) > 0){
         $personax = mysqli_fetch_all($sqlPersonax,MYSQLI_ASSOC);
         echo json_encode($personax);
@@ -32,11 +32,20 @@ if (isset($_GET["borrar"])){
 //Inserta un nuevo registro y recepciona en método post los datos de nombre y correo
 if(isset($_GET["insertar"])){
     $data = json_decode(file_get_contents("php://api"));
-    $nombre=$data->nombre;
-    $correo=$data->correo;
-        if(($correo!="")&&($nombre!="")){
+    $nombre2=$data->nombre;
+    $apellido2=$data->apellido;
+    $doc2=$data->doc;
+    $lnac2=$data->lnac;
+    $fnac2=$data->fnac;
+    $email2=$data->email;
+    $tel2=$data->tell;
+    $user2=$data->user;
+    $pass2=$data->passw2;
+    $ciudad2=$data->lres;
+    $td2=$data->tipodoc;
+        if(($pass2!="")&&($user2!="")){
             
-    $sqlPersonax = mysqli_query($conexionBD,"INSERT INTO persona(nombre,correo) VALUES('$nombre','$correo') ");
+    $sqlPersonax = mysqli_query($conexionBD,"INSERT INTO persona(nombreP,apellidoP,documentoP,lugarnacP,fechanacP,emailP,telefonoP,usuarioP,contraseñaP,idresidenciaP,idtdocP) VALUES('$nombre2','$apellido2','$doc2','$lnac2','$fnac2','$email2','$tel2','$user2','$pass2','$ciudad2','$td2') ");
     echo json_encode(["success"=>1]);
         }
     exit();
@@ -47,10 +56,19 @@ if(isset($_GET["actualizar"])){
     $data = json_decode(file_get_contents("php://api"));
 
     $id=(isset($data->id))?$data->id:$_GET["actualizar"];
-    $nombre=$data->nombre;
-    $correo=$data->correo;
+    $nombre2=$data->nombre;
+    $apellido2=$data->apellido;
+    $doc2=$data->doc;
+    $lnac2=$data->lnac;
+    $fnac2=$data->fnac;
+    $email2=$data->email;
+    $tel2=$data->tell;
+    $user2=$data->user;
+    $pass2=$data->passw2;
+    $ciudad2=$data->lres;
+    $td2=$data->tipodoc;
     
-    $sqlPersonax = mysqli_query($conexionBD,"UPDATE persona SET nombre='$nombre',correo='$correo' WHERE id='$id'");
+    $sqlPersonax = mysqli_query($conexionBD,"UPDATE persona SET nombreP='$nombre2',apellidoP='$apellido2',documentoP='$doc2',lugarnacP='$lnac2',fechanacP='$fnac2',emailP='$email2',telefonoP='$tel2',usuarioP='$user2',contraseñaP='$pass2',idresidenciaP='$ciudad2',idtdocP='$td2' WHERE id='$id'");
     echo json_encode(["success"=>1]);
     exit();
 }
@@ -61,6 +79,4 @@ if(mysqli_num_rows($sqlPersonax) > 0){
     echo json_encode($personax);
 }
 else{ echo json_encode([["success"=>0]]); }
-
-
 ?>
