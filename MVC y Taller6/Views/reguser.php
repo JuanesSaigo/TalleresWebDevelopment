@@ -126,7 +126,7 @@
                                                         foreach ($tdocumento as $valoresp){
                                                 
                                                     ?>
-                                                    <option value='<?php echo $valoresp->idP ?>'><?php echo $valoresp->nombreP ?>, <?php echo $valores->emailP ?> </option>
+                                                    <option value='<?php echo $valoresp->idP ?>'><?php echo $valoresp->nombreP ?>, <?php echo $valoresp->emailP ?> </option>
                                                     <?php
                                                         }
                                                     ?>
