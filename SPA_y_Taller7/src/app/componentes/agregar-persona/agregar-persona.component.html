@@ -1,10 +1,10 @@
-<div class="card">
+<div class="card px-2">
     <div class="card-header">
         Agregar Persona
     </div>
 
     <div class="row -sm">
-        <form [formGroup]="formPersona" (ngSubmit)="enviarDatos()">
+        <form [formGroup]="formPersona" (ngSubmit)="enviarDatos()" id="formulario">
             <div class="mb-3">
                 <label class="center" for="ntd">Nombres</label>
                 <input class="form-control" type="text" formControlName="nombre" name="inp-nombre-p" id="inp-nombre-p" aria-describedby="basic-addon1">

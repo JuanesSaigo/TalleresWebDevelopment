@@ -8,7 +8,7 @@ import { Persona } from './Persona';
 })
 export class CrudService {
 
-  API: string='http://localhost/persona/'
+  API: string='http://localhost/MVC%20y%20Taller6/Controller/api.php'
 
   constructor(private clienteHttp:HttpClient) {   }
 

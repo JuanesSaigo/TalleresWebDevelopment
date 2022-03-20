@@ -11,5 +11,9 @@ export class Persona{
     user!:String;
     passw!:String;
     passw2!:String;
-    lres!:bigint
+    lres!:bigint;
+    idtd!:bigint;
+    nombretp!:String;
+    idc!:bigint;
+    nombrec!:String
 }
