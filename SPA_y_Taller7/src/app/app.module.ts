@@ -10,14 +10,16 @@ import { ListarPersonaComponent } from './componentes/listar-persona/listar-pers
 
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { HomeComponent } from './componentes/home/home.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     AgregarPersonaComponent,
     EditarPersonaComponent,
-    ListarPersonaComponent
+    ListarPersonaComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
